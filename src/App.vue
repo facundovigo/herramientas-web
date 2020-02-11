@@ -24,7 +24,7 @@ export default {
   margin-top: 60px;
 } */
   body{
-    background: url("./assets/bbva.jpg") no-repeat fixed center center;
+    background: url("./assets/logo.png") no-repeat fixed center center;
     background-size: cover;
 }
 </style>

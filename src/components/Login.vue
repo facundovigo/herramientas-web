@@ -8,7 +8,7 @@
                         <h3>Herramientas</h3>
                     </div>
                     <div class="card-body">
-                        <form v-on:submit.prevent>
+                        <form v-on:submit.prevent="login()">
                             <div class="input-group form-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -21,19 +21,19 @@
                                 </div>
                                 <input type="password" class="form-control" placeholder="contraseña" v-model="user.password" required>
                             </div>
+                            <div class=" login_btn">
+                            <button class=" login_bbva" v-on:click="login()" v-on:keyup.enter="submit">Ingresar</button>
+                        </div>
                         </form>
                     </div>
-                    <div class="card-footer text-center">
-                        <div class="btn login_btn">
-                            <button class="btn" v-on:click="login()">Ingresar</button>
-                        </div>
-                    </div>
                     <div class="card-footer">
-                       
                     </div>
                 </div>
             </div>
          </div>
+          <footer class="foot"> 
+                 <img  class="fot" src="../assets/foot6.png">  
+            </footer>
     </div>
 </template>
 
@@ -53,7 +53,7 @@ export default {
             methods: {
                 login(){
                     var self = this;
-                    if(self.users == "soptools" || self.user.password == "salchichon"){
+                    if(self.users == "cau" || self.user.password == "soporte"){
                         this.$router.push('/herramientas');
                     }else{
                         alert("usuario incorrecto")
@@ -81,20 +81,35 @@ export default {
         color: black;
         border:0 !important;
     }
-    .login_btn{
-        color: black;
-        width: 100%;
-    }
-    .login_btn:hover{
-        color: black;
+    .login_bbva{
+        border: none;
+        border-radius: 4px;
         background-color: #1973B8;
-        opacity: 60%;
+        height: 35px;
+        width: 250px;
+        color: white;
+       
+        
     }
+        .login_bbva:hover{
+        color: black;
     
+    
+    } 
     .links{
         color: white;
     }
     .links a{
         margin-left: auto;
+    }
+      .foot{
+        margin-left: 80%;
+    }
+    .fot {
+    width: 90%;
+    height: 70%;
+    margin: 0 auto;
+    display: block;
+    position: relative;
     }
 </style>
