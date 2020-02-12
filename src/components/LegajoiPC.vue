@@ -1,4 +1,3 @@
-import axios from 'axios';
 <template>
     <div >
     <div class="wrapper fadeInDown tam">
@@ -8,7 +7,7 @@ import axios from 'axios';
                 <p class="labelColor">Legajo PC</p>
             </div>
             <div class="box">
-            <form action="" v-on:submit.prevent="usuarioPC">
+            <form action="" v-on:submit.prevent="usuarioPC(user)">
                 <div class="inputBox">
                 <input type="text"  class="form-control-facu" v-model="user" required>
                 <label  >Ingrese Usuario o Equipo </label>
