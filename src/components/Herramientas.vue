@@ -4,6 +4,8 @@
         <div class="contenedor">
                 <LegajoPC></LegajoPC>
                 <Farms></Farms>
+                <userInfo></userInfo>
+                <userInfo></userInfo>
          </div>
              <footer class="foot"> 
                  <img  class="fot" src="../assets/foot6.png">  
@@ -16,11 +18,13 @@
     import Name from '../components/Name'
     import LegajoPC from '../components/LegajoiPC'
     import Farms from '../components/Farms'
+    import UserInfo from '../components/userInfo'
 export default {
     components: {
         LegajoPC,
         Name,
-        Farms
+        Farms,
+        UserInfo
     }
 }
 </script>

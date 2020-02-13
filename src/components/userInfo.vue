@@ -1,18 +1,18 @@
 <template>
-    <div >
+     <div >
     <div class="wrapper fadeInDown tam">
         <div id="formContent">
             <!-- Icon -->
             <div class="fadeIn first">
-                <p class="labelColor">Farms</p>
+                <p class="labelColor">Informacion del usuario</p>
             </div>
             <div class="box">
-            <form action="" v-on:submit.prevent="farms(farm)">
+            <form action="" v-on:submit.prevent="userInfo(user)">
                 <div class="inputBox">
-                <input type="text"  class="form-control-facu" v-model="farm" required>
-                <label> Ingrese Farm a Buscar </label>
+                <input type="text"  class="form-control-facu" v-model="user" required>
+                <label> Ingrese Usuario a Buscar </label>
                 </div>
-            <input type="button" class="fadeIn first" value="Consultar" v-on:click="farms(farm)" >
+            <input type="button" class="fadeIn first" value="Consultar" v-on:click="userInfo(user)" >
             </form>
             </div>
             <div v-if="loading" >
@@ -39,17 +39,17 @@ export default {
         return {
             loading: false,
             datos: '',
-            farm: null
+            user: null
         }
     },
     methods: {
         
-        async  farms(farm) {
+        async  userInfo(user) {
             this.loading = true;
             this.datos = 'Consultando datos Espere por favor'
             let self = this
             try {
-            const result = await axios.get(`http://76.252.93.168:3000/farms/${farm}`)
+            const result = await axios.get(`http://76.252.93.168:3000/userInfo/${user}`)
             self.datos = result.data;
             this.loading = false;
             } catch (error) {
@@ -159,7 +159,6 @@ border-radius: 5px;
 .result::-webkit-scrollbar-thumb{
     background: rgba(255, 255, 255, .9);
     border-radius: 10px;
-
 }
     /* STRUCTURE */
     .wrapper {
@@ -188,7 +187,7 @@ border-radius: 5px;
         background: #fff;
         padding: 30px;
         width: auto;
-        /* max-width: 21%; */
+        /* max-width: 30%; */
         position: relative;
         padding: 7px;
         -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
