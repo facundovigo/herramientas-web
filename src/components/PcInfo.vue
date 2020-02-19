@@ -4,15 +4,15 @@
         <div id="formContent">
             <!-- Icon -->
             <div class="fadeIn first">
-                <p class="labelColor">Informacion del usuario</p>
+                <p class="labelColor">Informacion del Equipo</p>
             </div>
             <div class="box">
-            <form action="" v-on:submit.prevent="userInfo(user)">
+            <form action="" v-on:submit.prevent="userInfo(pc)">
                 <div class="inputBox">
-                <input type="text"  class="form-control-facu" v-model="user" required>
-                <label> Ingrese Usuario a Buscar </label>
+                <input type="text"  class="form-control-facu" v-model="pc" required>
+                <label> Ingrese Equipo a Buscar </label>
                 </div>
-            <input type="button" class="fadeIn first" value="Consultar" v-on:click="userInfo(user)" >
+            <input type="button" class="fadeIn first" value="Consultar" v-on:click="userInfo(pc)" >
             </form>
             </div>
             <div v-if="loading" >
@@ -39,17 +39,17 @@ export default {
         return {
             loading: false,
             datos: '',
-            user: null
+            pc: null
         }
     },
     methods: {
         
-        async  userInfo(user) {
+        async  userInfo(pc) {
             this.loading = true;
             this.datos = 'Consultando datos Espere por favor'
             let self = this
             try {
-            const result = await axios.get(`http://76.252.93.168:3000/userInfo/${user}`)
+            const result = await axios.get(`http://76.252.93.168:3000/getpcinfo/${pc}`)
             self.datos = result.data;
             this.loading = false;
             } catch (error) {
@@ -133,7 +133,7 @@ border-radius: 5px;
     color: white;
 }
 .form-control-facu{
-     width: 85%;
+     width: auto;
      padding: 0.7em;
      border: none;
      background: none;
@@ -250,7 +250,10 @@ border-radius: 5px;
             opacity: 1;
             -webkit-transform: none;
             transform: none;
-        }//http://proxybc.arg.igrupobbva:8082/rom { opacity:0; } to { opacity:1; } }
+        }
+    }
+    /* Simple CSS3 Fade-in Animation */
+    @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
     @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
     @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
     .fadeIn {

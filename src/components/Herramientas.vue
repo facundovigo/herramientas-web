@@ -5,7 +5,7 @@
                 <LegajoPC></LegajoPC>
                 <Farms></Farms>
                 <userInfo></userInfo>
-                <userInfo></userInfo>
+                <PcInfo></PcInfo>
          </div>
              <footer class="foot"> 
                  <img  class="fot" src="../assets/foot6.png">  
@@ -19,12 +19,14 @@
     import LegajoPC from '../components/LegajoiPC'
     import Farms from '../components/Farms'
     import UserInfo from '../components/userInfo'
+    import PcInfo from '../components/PcInfo'
 export default {
     components: {
         LegajoPC,
         Name,
         Farms,
-        UserInfo
+        UserInfo,
+        PcInfo
     }
 }
 </script>
@@ -46,3 +48,4 @@ export default {
     position: relative;
     }
 </style>
+

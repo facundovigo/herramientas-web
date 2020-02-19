@@ -150,7 +150,7 @@ border-radius: 5px;
     color: #49A5E6;
     text-align: left;
     overflow:auto ;
-    height: 25rem;
+    max-height: 25rem;
 }
 .result::-webkit-scrollbar{
     background-color:rgba(73, 165, 230, 0.1);
